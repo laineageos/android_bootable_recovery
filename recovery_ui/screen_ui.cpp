@@ -60,9 +60,9 @@ enum DirectRenderManager {
 };
 
 namespace {
-constexpr uint8_t kHeaderDarkR = 0x60;
-constexpr uint8_t kHeaderDarkG = 0xa5;
-constexpr uint8_t kHeaderDarkB = 0xfa;
+constexpr uint8_t kHeaderDarkR = 0x3f;
+constexpr uint8_t kHeaderDarkG = 0x9e;
+constexpr uint8_t kHeaderDarkB = 0xff;
 
 void DrawRoundedRect(const DrawInterface& draw, int left, int top, int right, int bottom,
                      int radius_top, int radius_bottom) {
@@ -711,13 +711,13 @@ void ScreenRecoveryUI::SetColor(UIElement e) const {
       if (fastbootd_logo_enabled_)
         gr_color(0xe6, 0x51, 0x00, 255);
       else
-        gr_color(63, 158, 255, 255);
+        gr_color(0x3f, 0x9e, 0xff, 255);
       break;
     case UIElement::MENU_SEL_BG_ACTIVE:
       if (fastbootd_logo_enabled_)
         gr_color(0xe6, 0x51, 0x00, 255);
       else
-        gr_color(0x7c, 0x4d, 0xff, 255);
+        gr_color(0x3f, 0x9e, 0xff, 255);
       break;
     case UIElement::MENU_SEL_FG:
       if (fastbootd_logo_enabled_)
